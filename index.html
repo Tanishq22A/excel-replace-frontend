@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Excel Replace Tool</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Excel Replace Tool</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div class="card">
+<div class="card">
 
-        <div id="uploadScreen">
-            <h2>Excel Replacement Tool</h2>
-            <input type="file" id="fileInput">
-            <button onclick="uploadFile()">Upload</button>
-        </div>
+  <!-- Upload -->
+  <div id="uploadScreen">
+    <h2>Excel Replacement Tool</h2>
+    <input type="file" id="fileInput" accept=".xlsx,.xls">
+    <button onclick="uploadFile()">Upload</button>
+  </div>
 
-        <div id="replaceScreen" class="hidden">
+  <!-- Replace -->
+  <div id="replaceScreen" class="hidden">
 
-            <h3>Replacement</h3>
+    <h3>Replacement</h3>
 
-            <label>
-                <input type="radio" name="mode" value="find" checked onchange="toggleColumn()">
-                Find & Replace
-            </label>
+    <label>
+      <input type="radio" name="mode" value="find" checked onchange="toggleColumn()">
+      Find & Replace
+    </label>
 
-            <label>
-                <input type="radio" name="mode" value="row" onchange="toggleColumn()">
-                Row wise
-            </label>
+    <label>
+      <input type="radio" name="mode" value="row" onchange="toggleColumn()">
+      Row wise (column based)
+    </label>
 
-            <select id="columnSelect" disabled></select>
+    <select id="columnSelect" disabled></select>
 
-            <input id="findVal" placeholder="Find value">
-            <input id="replaceVal" placeholder="Replace with">
+    <input id="findVal" placeholder="Find value">
+    <input id="replaceVal" placeholder="Replace with">
 
-            <button onclick="doReplace()">Replace</button>
+    <button onclick="doReplace()">Replace</button>
+  </div>
 
-        </div>
+  <!-- Continue -->
+  <div id="continueScreen" class="hidden">
+    <h3>Do you want to continue replacing?</h3>
+    <button onclick="continueReplacing()">Yes</button>
+    <button onclick="finishReplacing()">No</button>
+  </div>
 
-        <div id="continueScreen" class="hidden">
-            <h3>Do you want to continue replacing?</h3>
-            <button onclick="continueReplacing()">Yes</button>
-            <button onclick="finishReplacing()">No</button>
-        </div>
+  <!-- Download -->
+  <div id="downloadScreen" class="hidden">
+    <h3>Download file</h3>
+    <button onclick="downloadExcel()">Download Excel</button>
+    <button onclick="downloadPDF()">Download PDF</button>
+  </div>
 
-        <div id="downloadScreen" class="hidden">
-            <h3>Download</h3>
-            <button onclick="downloadExcel()">Download Excel</button>
-            <button onclick="downloadPDF()">Download PDF</button>
-        </div>
+</div>
 
-    </div>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
-
 </html>
