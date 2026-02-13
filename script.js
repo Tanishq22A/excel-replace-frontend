@@ -1,5 +1,5 @@
 // PUT YOUR RENDER BACKEND URL HERE
-const BACKEND = "https://YOUR-BACKEND-URL";
+const BACKEND = "https://excel-replace-backend-1.onrender.com";
 
 const uploadScreen = document.getElementById("uploadScreen");
 const replaceScreen = document.getElementById("replaceScreen");
@@ -117,3 +117,4 @@ function downloadExcel(){
 function downloadPDF(){
     window.open(BACKEND + "/download/pdf","_blank");
 }
+
